@@ -105,58 +105,6 @@
         margin-top: 2px;
       }
 
-      .toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        user-select: none;
-      }
-
-      .toggle input[type="checkbox"] {
-        width: 44px;
-        height: 24px;
-        appearance: none;
-        background: var(--border);
-        border-radius: 999px;
-        position: relative;
-        outline: none;
-        cursor: pointer;
-      }
-
-      .toggle input[type="checkbox"]::after {
-        content: "";
-        width: 18px;
-        height: 18px;
-        background: #ffffff;
-        border-radius: 50%;
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        transition: transform 140ms ease;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-      }
-
-      .toggle input[type="checkbox"]:checked {
-        background: var(--focus);
-      }
-
-      .toggle input[type="checkbox"]:checked::after {
-        transform: translateX(20px);
-      }
-
-      .toggle input[type="checkbox"]:focus-visible {
-        outline: 3px solid rgba(37, 99, 235, 0.25);
-        outline-offset: 2px;
-      }
-
-      .ad-slot {
-        border: 1px dashed var(--border);
-        border-radius: 12px;
-        padding: 18px;
-        color: var(--muted);
-        margin: 0 0 18px;
-      }
-
       .small {
         font-size: 0.92rem;
         color: var(--muted);
@@ -242,12 +190,39 @@
           We do not directly collect or store personal information ourselves.
         </p>
 
+        <!-- PATCH 3 -->
+        <h2>Third-party services</h2>
         <p>
-          Third-party services used by the app, such as advertising and
-          analytics providers, may collect limited device information, for
-          example advertising identifiers, IP address, or app interaction data,
-          for their respective purposes, including advertising delivery,
-          analytics, and fraud prevention.
+          The app uses third-party services provided by Google to support
+          advertising, analytics, and crash reporting. These services may
+          collect limited device and usage information, such as device
+          identifiers, IP address, app usage data, and crash diagnostics.
+        </p>
+
+        <p>Third-party services used by this app include:</p>
+        <ul>
+          <li>Google AdMob (advertising)</li>
+          <li>Firebase Analytics (usage analytics)</li>
+          <li>Firebase Crashlytics (crash reporting)</li>
+        </ul>
+
+        <p>
+          Data collected by these services is processed in accordance with
+          Google’s Privacy Policy.
+        </p>
+
+        <!-- PATCH 4 -->
+        <h2>Data retention and deletion</h2>
+        <p>
+          The app does not retain personal data on its own servers. Any data
+          collected by third-party services is retained only for as long as
+          necessary to fulfil their stated purposes and in accordance with their
+          own data retention policies.
+        </p>
+
+        <p>
+          Users can manage or request deletion of data collected by Google
+          services through their Google account settings.
         </p>
 
         <h2>Platform permissions</h2>
@@ -269,25 +244,14 @@
         <h2>Contact</h2>
         <p>
           If you have questions about this policy, contact
-          <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
+          <a href="mailto:privacy@usecadence.fit">privacy@usecadence.fit</a>
+        </p>
+        <hr />
+        <p>
+          This app is maintained by Ben Taylor. I&apos;d love to hear from you:
+          <a href="mailto:ben@brtdesign.co.uk">ben@brtdesign.co.uk</a>
         </p>
       </section>
     </main>
-
-    <script>
-      (function () {
-        const toggle = document.getElementById("personalisedAds");
-        const status = document.getElementById("ads-status");
-
-        function render() {
-          status.textContent = toggle.checked
-            ? "Currently: Allowed"
-            : "Currently: Not allowed";
-        }
-
-        toggle.addEventListener("change", render);
-        render();
-      })();
-    </script>
   </body>
 </html>
