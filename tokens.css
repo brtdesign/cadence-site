@@ -1,0 +1,53 @@
+:root {
+  --white: #ffffff;
+  --shadow-strong: rgba(0, 0, 0, 0.15);
+}
+
+body {
+  --ink: ##17171a;
+  --muted: #525252;
+  --accent: #d1d646;
+  --accent-dark: #d95723;
+  --bg: #f7f3ee;
+  --panel: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --on-accent: #ffffff;
+  --bg-grad-start: #fff6ea;
+  --bg-grad-mid: #f7f3ee;
+  --bg-grad-end: #f0ece6;
+
+  --text: ##17171a;
+  --muted: #4b5563;
+  --border: #e5e7eb;
+  --card: #f9fafb;
+  --focus: #2563eb;
+}
+/*
+
+  primaryBackground: "#17171a",
+
+  // secondaryBackground: "#07d807ff",
+  // secondaryBackground: "#333533",
+  secondaryBackground: "#222328",
+  link: "#E8EDDF",
+  primaryText: "#CFDBD5",
+  highlight2: "#F5CB5C",
+  highlight3: "#D1D646",
+  dropSet: "#63A6ED",
+  clusterSet: "#b681fbff",
+  superSet: "#4CB380",
+  warmUp: "#e5aa70",
+  //warmUpBG: "#e5aa7033",
+  warmUpBG: "#65686f2f",
+  textXlight: "#d9d9d91A",
+  textMed: "#d9d9d933",
+  textDark: "#e7e7e77f",
+  placehlolderText: "#9BA5B7",
+  workingSet: "#D1D646",
+  success: "#4CB380",
+  warning: "#F5CB5C",
+  error: "#f56b38ff",
+
+
+
+*/
