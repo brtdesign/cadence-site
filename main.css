@@ -15,6 +15,21 @@ body {
   );
 }
 
+body.page-home {
+  background:
+    radial-gradient(
+      circle at 85% 110%,
+      var(--accent) -20%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at top,
+      var(--bg-grad-start) 0%,
+      var(--bg-grad-mid) 45%,
+      var(--bg-grad-end) 100%
+    );
+}
+
 body.page-home main {
   max-width: 1100px;
   margin: 0 auto;
