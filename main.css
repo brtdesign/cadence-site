@@ -1,11 +1,14 @@
 * {
   box-sizing: border-box;
+
 }
 
 body {
   margin: 0;
   color-scheme: light;
-  font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Nunito", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
   color: var(--ink);
   background: radial-gradient(
     circle at top,
@@ -17,11 +20,11 @@ body {
 
 body.page-home {
   background:
-    radial-gradient(
+    /* radial-gradient(
       circle at 85% 110%,
       var(--accent) -20%,
       transparent 55%
-    ),
+    ), */
     radial-gradient(
       circle at top,
       var(--bg-grad-start) 0%,
@@ -40,8 +43,7 @@ body.page-home main {
 
 body.page-home header {
   display: grid;
-  gap: 20px 36px;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 20px;
   align-items: start;
 }
 
@@ -51,7 +53,9 @@ body.page-home .header-brand {
 }
 
 body.page-home .cadence-benefits {
-  align-self: end;
+  display: grid;
+  gap: 20px;
+  justify-items: start;
 }
 /* .header-home {
   border-bottom: 1px solid var(--muted);
@@ -75,29 +79,24 @@ body.page-home .logo img {
   object-fit: contain;
 }
 
-body.page-home .beta-panel {
-  margin-top: 32px;
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: var(--panel);
-  color: var(--muted);
-  box-shadow: 0 10px 24px var(--shadow);
-  font-size: 0.95rem;
+
+
+body.page-home .store-badge {
+  width: 100%;
 }
 
-body.page-home .beta-panel p {
+body.page-home .store-badge img {
+  display: block;
+max-width:50%;
   margin: 0;
+  height: auto;
 }
+/* @media screen and (max-width:600px) {
+body.page-home .store-badge img {
 
-body.page-home .beta-panel a {
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
+max-width:80%;
 }
-
-body.page-home .beta-panel a:hover {
-  border-color: currentColor;
-}
+} */
 
 body.page-home h1 {
   margin: 0;
@@ -118,8 +117,8 @@ body.page-home .tagline-list {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 2px;
-  color: var(--muted);
+  gap: 8px;
+  color: var(--ink);
   max-width: 34rem;
 }
 
@@ -131,22 +130,15 @@ body.page-home .tagline-list li {
 body.page-home .tagline-list li::before {
   content: "✓";
   position: absolute;
-  left: 0;
-  top: 2px;
-  color: var(--accent);
+  left: 8px;
+  top: 0px;
+  color: var(--tick);
   font-weight: 700;
-}
-
-body.page-home .tagline-list h3 {
-  margin: 0 0 6px;
-  font-size: 1.05rem;
-  color: var(--ink);
 }
 
 body.page-home .tagline-list p {
   margin: 0;
 }
-
 body.page-home .cta {
   display: inline-flex;
   align-items: center;
@@ -183,7 +175,9 @@ body.page-home .card {
 
 body.page-home .card h3 {
   margin: 0 0 10px;
-  font-family: "Fraunces", "Georgia", serif;
+  font-family: "Nunito", "Helvetica Neue", Arial, sans-serif;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 body.page-home .card p {
@@ -194,7 +188,7 @@ body.page-home .card p {
 body.page-home .screenshots {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 body.page-home .screenshots img {
@@ -208,6 +202,10 @@ body.page-home .screenshots img {
 
 body.page-home .screenshots img:hover {
   transform: translateY(-4px);
+}
+
+body.page-home .lightbox {
+  display: none;
 }
 
 body.page-home footer {
@@ -241,6 +239,51 @@ body.page-home footer a:hover {
   body.page-home .cta {
     width: 100%;
     justify-content: center;
+  }
+
+  body.page-home .screenshots img {
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  body.page-home .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: rgba(220, 215, 215, 0.72);
+  }
+
+  body.page-home .lightbox[hidden] {
+    display: none;
+  }
+
+  body.page-home .lightbox-image {
+    display: block;
+    max-width: min(92vw, 520px);
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    box-shadow: 0 18px 32px var(--shadow-strong);
+  }
+
+  body.page-home .lightbox-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--white);
+    font: inherit;
+  }
+
+  body.page-home.lightbox-open {
+    overflow: hidden;
   }
 }
 
